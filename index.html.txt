@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>履歷表</title>
+
+<style>
+body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 1100px;
+    margin: 50px auto;
+    gap: 20px;
+}
+
+/* 左側 */
+.sidebar {
+    width: 260px;
+    background: #fff7e6;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* 右側 */
+.container {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* 頭部 */
+.header {
+    text-align: center;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffe0b2;
+}
+
+h1 {
+    margin: 10px 0;
+    color: #2e7d32;
+}
+
+/* About */
+.about {
+    background: #ffe4ec;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+/* 區塊標題 */
+.section-title {
+    font-weight: bold;
+    color: #ff7043;
+    margin-top: 20px;
+    border-bottom: 2px solid #ffccbc;
+    padding-bottom: 5px;
+}
+
+/* 技能條 */
+.bar {
+    background: #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 10px;
+    background: linear-gradient(to right, #ffb74d, #ff7043);
+}
+
+/* 經歷卡片 */
+.card {
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* email */
+.email {
+    color: #ff7043;
+    cursor: pointer;
+}
+
+.copy-msg {
+    color: green;
+    font-size: 14px;
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- 左側 -->
+<div class="sidebar">
+
+    <div class="section-title">Skills</div>
+
+    Motion Design
+    <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
+
+    Graphic Design
+    <div class="bar"><div class="bar-fill" style="width:70%"></div></div>
+
+    Digital Art
+    <div class="bar"><div class="bar-fill" style="width:75%"></div></div>
+
+    HTML / CSS
+    <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+
+    <div class="section-title">Language</div>
+
+    English
+    <div class="bar"><div class="bar-fill" style="width:85%"></div></div>
+
+    Japanese
+    <div class="bar"><div class="bar-fill" style="width:60%"></div></div>
+
+</div>
+
+<!-- 右側 -->
+<div class="container" id="resume">
+
+    <div class="header">
+        <img src="images/photo.jpg" alt="個人照片">
+        <h1>土豆油</h1>
+
+        <div>學號：114014073</div>
+
+        <div>
+            Email：
+            <span class="email" onclick="copyEmail()">aqc7228@gmail.com</span>
+        </div>
+
+        <div class="copy-msg" id="msg">已複製 Email！</div>
+    </div>
+
+    <!-- About -->
+    <div class="about">
+        我是一名對設計與創意充滿熱情的學生，擅長圖像設計與數位創作，
+        喜歡透過視覺傳達想法，並持續學習前端技術提升作品表現。
+    </div>
+
+    <!-- 教育 -->
+    <div class="section-title">Education</div>
+
+    <div class="card">
+        2023 - 現在<br>
+        某某大學 資訊相關科系
+    </div>
+
+    <div class="card">
+        2020 - 2023<br>
+        高中
+    </div>
+
+    <!-- 經驗 -->
+    <div class="section-title">Experience</div>
+
+    <div class="card">
+        校內專題製作（2025）<br>
+        負責 UI 設計與前端頁面製作
+    </div>
+
+    <div class="card">
+        社團美宣<br>
+        設計活動海報與社群圖片
+    </div>
+
+    <!-- 作品 -->
+    <div class="section-title">Projects</div>
+
+    <div class="card">
+        個人網站<br>
+        使用 HTML / CSS 製作個人作品集
+    </div>
+
+    <div class="card">
+        海報設計<br>
+        參與校內比賽並完成多張視覺作品
+    </div>
+
+    <!-- 聯絡 -->
+    <div class="section-title">Contact</div>
+
+    <div class="card">
+        電話：123-456-789<br>
+        Email：pinjjj0218@gmail.com
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function copyEmail() {
+    const email = "pinjjj0218@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        const msg = document.getElementById("msg");
+        msg.style.display = "block";
+        setTimeout(() => {
+            msg.style.display = "none";
+        }, 2000);
+    });
+}
+</script>
+
+</body>
+</html>
